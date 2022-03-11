@@ -1,0 +1,89 @@
+import 'package:book_store/screens/homepage.dart';
+import 'package:flutter/material.dart';
+
+typedef TitleCallback = void Function(String, int);
+
+class AppDrawer extends StatefulWidget {
+  const AppDrawer({Key? key}) : super(key: key);
+
+  @override
+  State<AppDrawer> createState() => _AppDrawerState();
+}
+
+class _AppDrawerState extends State<AppDrawer> {
+  navigateToPage(BuildContext context, String page) {
+    Navigator.of(context)
+        .pushNamedAndRemoveUntil(page, (Route<dynamic> route) => false);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          DrawerHeader(
+            child: Text('Drawer header'),
+            decoration: BoxDecoration(color: Colors.blue),
+          ),
+          ListTile(
+            leading: Icon(Icons.home),
+            title: Text('Home'),
+            onTap: () => navigateToPage(context, 'home'),
+          ),
+          ListTile(
+            leading: Icon(Icons.book),
+            title: Text('Bookstores'),
+            onTap: () => navigateToPage(context, 'booksPage'),
+          ),
+          ListTile(
+            leading: Icon(Icons.library_books),
+            title: Text('Book Depository'),
+            onTap: () => navigateToPage(context, 'categoriesPage'),
+          ),
+          ListTile(
+            leading: Icon(Icons.book),
+            title: Text("Blackwell's Books"),
+          ),
+          Text("App"),
+          ListTile(
+            leading: Icon(Icons.local_shipping),
+            title: Text('Free shpping'),
+          ),
+          ListTile(
+            leading: Icon(Icons.discord_outlined),
+            title: Text('Special offers'),
+          ),
+          ListTile(
+            leading: Icon(Icons.library_books_outlined),
+            title: Text('Reading lists'),
+          ),
+          ListTile(
+            leading: Icon(Icons.tag),
+            title: Text('Bestsellers'),
+          ),
+          ListTile(
+            leading: Icon(Icons.lock_clock),
+            title: Text('Comming soon'),
+          ),
+          ListTile(
+            leading: Icon(Icons.question_mark_rounded),
+            title: Text('FAQ'),
+          ),
+          ListTile(
+            leading: Icon(Icons.pageview),
+            title: Text('Full list of categories'),
+          ),
+          ListTile(
+            leading: Icon(Icons.search),
+            title: Text('Advanced search'),
+          ),
+          ListTile(
+            leading: Icon(Icons.shield),
+            title: Text('Privacy policy'),
+          ),
+        ],
+      ),
+    );
+  }
+}
