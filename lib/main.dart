@@ -21,13 +21,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(primaryColor: Colors.blue),
       home: HomePageScreen(),
-      routes: {
-        'home': (context) => HomePage(),
-        'searchPage': (context) => SearchPage(),
-        'description': (context) => BookDescription(),
-        'booksPage': (context) => BooksPage(),
-        'categoriesPage':(context) => CategoriesPage(),
-      },
+      // routes: {
+      //   'home': (context) => HomePage(),
+      //   'searchPage': (context) => SearchPage(),
+      //   'description': (context) => BookDescription(),
+      //   'booksPage': (context) => BooksPage(),
+      //   'categoriesPage':(context) => CategoriesPage(),
+      // },
     );
   }
 }

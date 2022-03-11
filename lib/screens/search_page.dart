@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../widgets/text_field_input.dart';
 
 class SearchPage extends StatefulWidget {
-  const SearchPage({ Key? key }) : super(key: key);
+  const SearchPage({Key? key}) : super(key: key);
 
   @override
   State<SearchPage> createState() => _SearchPageState();
@@ -12,8 +12,10 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
-    return TextFieldInput(
-          hintText: 'Enter keywords, title, author or ISBN',
-        );
+    return Scaffold(
+      body: TextFieldInput(
+        hintText: 'Enter keywords, title, author or ISBN',
+      ),
+    );
   }
 }

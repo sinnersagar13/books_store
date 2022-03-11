@@ -1,7 +1,11 @@
+import 'package:book_store/screens/book_description.dart';
+import 'package:book_store/screens/books_page.dart';
+import 'package:book_store/screens/categories_page.dart';
 import 'package:book_store/screens/homepage.dart';
+import 'package:book_store/screens/search_page.dart';
 import 'package:flutter/material.dart';
 
-typedef TitleCallback = void Function(String, int);
+// typedef TitleCallback = void Function(String, int);
 
 class AppDrawer extends StatefulWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -11,39 +15,52 @@ class AppDrawer extends StatefulWidget {
 }
 
 class _AppDrawerState extends State<AppDrawer> {
-  navigateToPage(BuildContext context, String page) {
-    Navigator.of(context)
-        .pushNamedAndRemoveUntil(page, (Route<dynamic> route) => false);
-  }
+  // navigateToPage(BuildContext context, String page) {
+  //   Navigator.of(context)
+  //       .pushNamedAndRemoveUntil(page, (Route<dynamic> route) => false);
+  // }
 
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
+    return Scaffold(
+      body: ListView(
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
-            child: Text('Drawer header'),
+            child: Text('Bookstore'),
             decoration: BoxDecoration(color: Colors.blue),
           ),
           ListTile(
-            leading: Icon(Icons.home),
+            leading: Icon(Icons.book),
             title: Text('Home'),
-            onTap: () => navigateToPage(context, 'home'),
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => HomePage()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.book),
             title: Text('Bookstores'),
-            onTap: () => navigateToPage(context, 'booksPage'),
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => BooksPage()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.library_books),
             title: Text('Book Depository'),
-            onTap: () => navigateToPage(context, 'categoriesPage'),
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => CategoriesPage()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.book),
             title: Text("Blackwell's Books"),
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => BookDescription()));
+            },
           ),
           Text("App"),
           ListTile(
@@ -77,6 +94,10 @@ class _AppDrawerState extends State<AppDrawer> {
           ListTile(
             leading: Icon(Icons.search),
             title: Text('Advanced search'),
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => SearchPage()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.shield),
