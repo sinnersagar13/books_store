@@ -25,7 +25,7 @@ class _BooksPageState extends State<BooksPage> {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.blue,
-        elevation: 12.0,
+        elevation: 15.0,
         primary: true,
         
         actions: [
