@@ -21,7 +21,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
         scrollDirection: Axis.vertical,
         children: [
           TextFieldInput(
-            hintText: 'Enter keywords, title, author or ISBN',
+            hintText: 'Enter keywords, title, author',
           ),
           
           
